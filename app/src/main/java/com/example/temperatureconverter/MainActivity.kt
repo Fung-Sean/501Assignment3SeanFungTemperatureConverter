@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
             }
         })
 
@@ -52,6 +53,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                if (seekBar?.progress ?: 0 < 32) { // Safe call (?.) and Elvis operator (?:)
+                    seekBar?.progress = 32 // Safe call (?.)
+                }
             }
         })
     }
